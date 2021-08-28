@@ -1,7 +1,3 @@
 node_modules
 test
 .vscode
-
-#Hardhat files
-cache
-artifacts
