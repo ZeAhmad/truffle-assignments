@@ -3,21 +3,17 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol"; // for capped supply
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Capped.sol";
 
 contract ZeeTockenCappedTimeBound is  ERC20, ERC20Capped {
  
-    mapping (address => uint256) private _balances;
-  
-    mapping (address => mapping (address => uint256)) private _allowances;
-  
-    uint256 private _totalSupply;
+    mapping (address => uint256) private _balances;                           // Like ERC20
+    mapping (address => mapping (address => uint256)) private _allowances;   //Like ERC20
+    uint256 private _totalSupply;                                            //Like ERC20
+    uint256 private tockenPrice = 10000000000000000;                         //Like ERC20
+    uint256 private _cap;                                                   // Like ERC20Capped
+    address public owner;                                                   // my own declared variable
 
-    address public owner;
-    
-    uint private tockenPrice = 10000000000000000;
- 
-    uint public _cap;
     constructor() 
     
     ERC20("Zee Tocken", "Z") 

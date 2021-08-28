@@ -26,7 +26,7 @@ interface IERC20 {
 3. There should be an additional method to adjust the price that allows the owner to adjust the price.
 */
 
-contract ZeeTocken is IERC20{
+contract ZeeTockenA is IERC20{
  
     mapping (address => uint256) private _balances;
   
